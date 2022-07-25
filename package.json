@@ -1,0 +1,13 @@
+{
+  "name": "ClientPack",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "repository": "https://github.com/TeamEvie/ClientPack",
+  "author": "Tristan Camejo <contact@tristancamejo.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^14.0.3",
+    "express": "^4.18.1",
+    "ws": "^8.8.1"
+  }
+}
