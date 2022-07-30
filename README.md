@@ -1,2 +1,2 @@
 # ClientPack
-Where the EMS clients come to live in harmony.
+Where the [EMS](https://github.com/TeamEvie/ems) clients come to live in harmony.
