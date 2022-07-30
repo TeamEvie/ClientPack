@@ -15,9 +15,9 @@ const wss = new WebSocket.Server({
   port: parseInt(process.env.PORT || "6969"),
 });
 
-function broadcastClients(packet) {
-  console.log(packet);
+console.log(`[Park] Listening on ws://localhost:${wss.options.port}`);
 
+function broadcastClients(packet) {
   wss.clients.forEach((ws) => {
     if (ws.readyState === WebSocket.OPEN) {
       ws.send(JSON.stringify(packet));
@@ -85,8 +85,10 @@ function handleHeartbeat(ws) {
   currentHeartbeat++;
 }
 
-wss.on("connection", (ws) => {
-  console.log(`[Client 🤝 Park] New connection! Sending hello payload`);
+wss.on("connection", (ws, req) => {
+  console.log(
+    `[Client 🤝 Park] New connection from ${req.socket.remoteAddress} sending hello payload.`
+  );
   ws.send(JSON.stringify(helloPayload));
 
   ws.on("message", (message) => {
