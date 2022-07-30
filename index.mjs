@@ -52,7 +52,6 @@ client.on("raw", (packet) => {
 
   if (BACKFILL_EVENTS.includes(packet.t)) {
     backfill.push(packet);
-    return;
   }
 
   broadcastClients(packet);
